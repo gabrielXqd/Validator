@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Check - Verificador de Cartões</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="background-animation"></div>
+        
+        <main class="container">
+            <div class="cyberpunk-border">
+                <h1 class="neon-text">Card Check<span class="blink">_</span></h1>
+                
+                <div class="card-preview">
+                    <div class="card-chip"></div>
+                    <div class="card-logo"><i class="fab fa-cc-visa"></i></div>
+                    <div id="previewCardNumber" class="card-number">**** **** **** ****</div>
+                    <div class="card-details">
+                        <div class="card-holder">
+                            <div class="label">TITULAR</div>
+                            <div id="previewCardName">NOME DO TITULAR</div>
+                        </div>
+                        <div class="card-expires">
+                            <div class="label">VALIDADE</div>
+                            <div id="previewExpiry">MM/AA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="cardForm" class="form-grid">
+                    <div class="input-group floating">
+                        <input type="text" id="cardNumber" required pattern="[0-9\s]{19}" maxlength="19" autocomplete="off">
+                        <label for="cardNumber">Número do Cartão</label>
+                        <div class="input-line"></div>
+                        <div class="validation-icon"></div>
+                    </div>
+
+                    <div class="input-group floating">
+                        <input type="text" id="cardName" required maxlength="30" autocomplete="off">
+                        <label for="cardName">Nome no Cartão</label>
+                        <div class="input-line"></div>
+                        <div class="validation-icon"></div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group floating">
+                            <input type="text" id="expiryDate" required pattern="[0-9/]{5}" maxlength="5" autocomplete="off">
+                            <label for="expiryDate">Validade</label>
+                            <div class="input-line"></div>
+                            <div class="validation-icon"></div>
+                        </div>
+
+                        <div class="input-group floating">
+                            <input type="text" id="cvv" required pattern="[0-9]{3}" maxlength="3" autocomplete="off">
+                            <label for="cvv">CVV</label>
+                            <div class="input-line"></div>
+                            <div class="validation-icon"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-group floating">
+                        <input type="text" id="fullName" required autocomplete="off">
+                        <label for="fullName">Nome Completo</label>
+                        <div class="input-line"></div>
+                        <div class="validation-icon"></div>
+                    </div>
+
+                    <div class="input-group floating">
+                        <input type="email" id="email" required autocomplete="off">
+                        <label for="email">Email</label>
+                        <div class="input-line"></div>
+                        <div class="validation-icon"></div>
+                    </div>
+
+                    <div class="input-group floating">
+                        <input type="text" id="phone" required maxlength="15" autocomplete="off">
+                        <label for="phone">Telefone</label>
+                        <div class="input-line"></div>
+                        <div class="validation-icon"></div>
+                    </div>
+
+                    <div class="input-group floating">
+                        <input type="text" id="cpf" required maxlength="14" autocomplete="off">
+                        <label for="cpf">CPF</label>
+                        <div class="input-line"></div>
+                        <div class="validation-icon"></div>
+                    </div>
+
+                    <button type="submit" class="cyberpunk-button">
+                        <span class="button-content">Verificar Cartão</span>
+                        <span class="button-glitch"></span>
+                        <span class="button-label">Verificar</span>
+                    </button>
+                </form>
+
+                <div id="result" class="result-message"></div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
